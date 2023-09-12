@@ -12,23 +12,22 @@ export class ConsultaCepPage {
   localidade: string = '';
   logradouro: string = '';
   endereco: any;
+  cep: any;
 
   constructor(private viaCepService: ViaCepService) {}
 
-  consultarEndereco() {
+  consultarCEP() {
     if (this.enderecoInput) {
 
       this.viaCepService.getEnderecoByCep(this.enderecoInput).subscribe((data) => {
-        this.endereco = data;
+        this.cep = data;
       });
     }
-    else {
-      const dados = {
-        uf: this.uf,
-        localidade: this.localidade,
-        logradouro: this.logradouro
-      };
-      this.viaCepService.getEndereco(dados).subscribe((data) => {
+  }
+  consultarEndereco(){
+    if (this.uf, this.localidade, this.logradouro){
+
+      this.viaCepService.getEndereco(this.uf, this.localidade, this.logradouro).subscribe((data) => {
         this.endereco = data;
       });
     }

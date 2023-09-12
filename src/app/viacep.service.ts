@@ -11,8 +11,8 @@ export class ViaCepService {
     return this.http.get(`https://viacep.com.br/ws/${cep}/json/`);
   }
 
-  getEndereco(params: { uf: string, localidade: string, logradouro: string }) {
-    return this.http.get(`https://viacep.com.br/ws/${params.uf}/${params.localidade}/${params.logradouro}/json/`);
+  getEndereco(uf: string, localidade: string, logradouro: string) {
+    return this.http.get(`https://viacep.com.br/ws/${uf}/${localidade}/${logradouro}/json/`);
   }
 
 }

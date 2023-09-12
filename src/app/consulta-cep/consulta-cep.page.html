@@ -10,6 +10,20 @@
     <ion-input [(ngModel)]="enderecoInput" type="text"></ion-input>
   </ion-item>
 
+  <ion-button expand="full" color="danger" (click)="consultarCEP()">Consultar CEP</ion-button>
+
+  <ion-card *ngIf="cep">
+    <ion-card-header>
+      Resultado
+    </ion-card-header>
+    <ion-card-content>
+      <p>Logradouro: {{ cep.logradouro }}</p>
+      <p>Bairro: {{ cep.bairro }}</p>
+      <p>Cidade: {{ cep.localidade }}</p>
+      <p>Estado: {{ cep.uf }}</p>
+    </ion-card-content>
+  </ion-card>
+  
   <br/>
   <ion-label class="text"> Caso não possua o CEP, digite os dados seguintes: </ion-label>
   <br/>
@@ -32,7 +46,7 @@
   </ion-item>
   <br/>
 
-  <ion-button expand="full" color="danger" (click)="consultarEndereco()">Consultar</ion-button>
+  <ion-button expand="full" color="danger" (click)="consultarEndereco()">Consultar Endereço</ion-button>
 
   <ion-card *ngIf="endereco">
     <ion-card-header>
