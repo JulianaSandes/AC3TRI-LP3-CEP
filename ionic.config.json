@@ -1,0 +1,7 @@
+{
+  "name": "ViaCEPApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

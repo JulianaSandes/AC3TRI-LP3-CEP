@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Consulta de CEP</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br/>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Digite o CEP</ion-label>
+    <ion-input [(ngModel)]="enderecoInput" type="text"></ion-input>
+  </ion-item>
+
+  <br/>
+  <ion-label class="text"> Caso não possua o CEP, digite os dados seguintes: </ion-label>
+  <br/>
+
+  <ion-item>
+    <ion-label position="floating">Sigla do Estado</ion-label>
+    <ion-input [(ngModel)]="uf" type="text"></ion-input>
+  </ion-item>
+  <br/>
+
+  <ion-item>
+    <ion-label position="floating">Cidade</ion-label>
+    <ion-input [(ngModel)]="localidade" type="text"></ion-input>
+  </ion-item>
+  <br/>
+
+  <ion-item>
+    <ion-label position="floating">Parte do Nome da Rua</ion-label>
+    <ion-input [(ngModel)]="logradouro" type="text"></ion-input>
+  </ion-item>
+  <br/>
+
+  <ion-button expand="full" color="danger" (click)="consultarEndereco()">Consultar</ion-button>
+
+  <ion-card *ngIf="endereco">
+    <ion-card-header>
+      Resultado
+    </ion-card-header>
+    <ion-card-content>
+      <p>Logradouro: {{ endereco.logradouro }}</p>
+      <p>Bairro: {{ endereco.bairro }}</p>
+      <p>Cidade: {{ endereco.localidade }}</p>
+      <p>Estado: {{ endereco.uf }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
